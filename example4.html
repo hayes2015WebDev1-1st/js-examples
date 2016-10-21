@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JS in Body</title>
+        <script>
+            window.onload = function() {
+                console.log('window load');
+                var dotObj = document.getElementById("redDot");
+                dotObj.style.left="250px";
+                // when the button is clicked, move the dot
+                document.getElementById("btnMoveDot").addEventListener("click",  
+                    function () {
+                        //get the current left position
+                        var currentLeftPosition = dotObj.style.left;
+                        console.log('currentLeftPosition = ' + currentLeftPosition);
+                        currentLeftPosition = parseInt(currentLeftPosition);
+                        //update the left position
+                        dotObj.style.left = (currentLeftPosition + 10) + "px";
+                        
+                });
+            };
+        </script>
+        <style>
+            #redDot {
+                height: 50px;
+                width: 50px;
+                border-radius: 50px;
+                background-color: red;
+                position: absolute;
+                top: 250px;
+                left: 250px;
+            }
+            
+            button {
+                border: solid 2px black;
+            }
+            
+        </style>
+
+    </head>
+    <body>
+        
+        <button id="btnMoveDot">Move the Dot</button>
+        <div id="redDot"></div>
+
+    </body>
+</html>
